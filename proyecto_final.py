@@ -4,6 +4,59 @@
 import event, time, cyberpi, mbuild
 import time
 
+#Iniciamos las variables para el contador de los usos de las palabras
+contador_hola = 0
+contador_adios = 0
+contador_personaje = 0
+contador_palabra = 0
+contador_imagen = 0
+contador_cuento = 0
+contador_narracion = 0
+contador_amigo = 0
+contador_leer = 0
+contador_escribir = 0
+contador_escuela = 0
+contador_hospital = 0
+contador_plaza = 0
+contador_casa = 0
+contador_familia = 0
+contador_madre = 0
+contador_padre = 0
+contador_hermana = 0
+contador_hermano = 0
+contador_abuela = 0
+contador_hambre = 0
+contador_comer = 0
+contador_dolor = 0
+contador_sueno = 0
+contador_agua = 0
+contador_pan = 0
+contador_historia = 0
+contador_pais = 0
+contador_paraguay = 0
+contador_indigena = 0
+contador_hoja = 0
+contador_lapiz = 0
+contador_tarea = 0
+contador_juguete = 0
+contador_pelota = 0
+contador_brazo = 0
+contador_hombre = 0
+contador_mujer = 0
+contador_perro = 0
+contador_gato = 0
+contador_conejo = 0
+contador_anillo = 0
+contador_abeja = 0
+contador_bailar = 0
+contador_blanco = 0
+contador_caballo = 0
+contador_calabaza = 0
+contador_cantar = 0
+contador_cantaro = 0
+contador_cerdo = 0
+
+
 # Conexion a la base de datos
 
 cyberpi.speech.set_recognition_address(url = "{NAVIGATEURL}")
@@ -18,6 +71,7 @@ cyberpi.speech.set_access_token(token = "{ACCESSTOKEN}")
 @event.start #llamamos una funcion de inicio de nuestra librería event para poder iniciar la lectura del código desde la placa
 #Se realiza el inicio de lectura del programa mediante la placa
 #Iniciamos la placa del robot solicitando el acceso a la red de wifi local, debe ser la misma que la de la computadora
+
 
 def on_start():  #definimos una función por medio de la cual, una vez la placa se encienda esta pueda realizar la siguiente acción
     global boton
@@ -59,6 +113,7 @@ def is_btn_press(): #definimos una funcion de interación mediante por medio de 
     else: #Si no se cumple la condicion inicial se pasa al siguiente conjunto de condicionales para su verificación
       if str(cyberpi.cloud.listen_result()).find(str('hola')) > -1:
         mbuild.speaker.play_melody_until_done("0001", 1)
+        contador_hola=contador_hola+1
 
       if str(cyberpi.cloud.listen_result()).find(str('adios')) > -1:
         mbuild.speaker.play_melody_until_done("0002", 1)
